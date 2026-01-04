@@ -1,0 +1,28 @@
+def calculator():
+    print("Simple Task Calculator")
+    print("Operation: +, -, *, /")
+    print("Type 'exit' to quit.")
+
+    while True:
+        try:
+            #get user input
+            expression = input("Enter expression:").strip()
+
+            if expression.lower() == "exit":
+                print("Goodbye!")
+                break
+
+            #Evaluate the expression safely
+            result = eval(expression)
+            print("Result:", result)
+
+        except ZeroDivisionError:
+            print("Error: Division by zero.")
+        except Exception as e:
+            print("Error:", e)
+        
+#Run the Calculator
+if __name__ == "__main__":
+    calculator()
+
+     
